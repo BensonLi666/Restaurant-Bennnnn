@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waima</title>
+</head>
+<body>
+  <h1>Prince Benson Fusion Restaurant</h1>
+  <p>Tasty Treats To Your Door</p>
+
+  <h2>Here are all the dishes!</h2>
+
+  <!-- Dish1 -->
+  <p>Big belly burger:30RMB</p>
+  <img src="http://media-cdn.tripadvisor.com/media/photo-s/06/58/18/d0/big-belly-burger-deli.jpg">
+  <br>
+
+  <!-- Dish2 -->
+  <p>Double cook meat:20RMB</p>
+  <img src="http://img3.imgtn.bdimg.com/it/u=2080564261,814243034&fm=27&gp=0.jpg">
+  <br>
+
+  <!-- Dish3 -->
+  <p>Super cool watermelon juce:28RMB</p>
+  <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2444803618,4114539490&fm=27&gp=0.jpg">
+
+  <!-- Order form -->
+  <h2>Place your order</h2>
+  <form action="{% url 'waimai:home_page' %}" method=“POST">
+        {% csrf_token %}
+        <input type="text" name="dish" placeholder="Please Type Which Dish You
+Want"><br>
+        <textarea name="address" placeholder="Please Type Your Address”></
+textarea><br>
+        <input type="submit" value="Place Your Order”>
+    </form>
+    <!-- Show Order -->
+    <h1>Your Order:</h1>
+    <p>Dish Ordered: {{dish}}</p>
+    <p>Delivery Address: {{address}}</p>
+
+</body>
+</html>
