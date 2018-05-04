@@ -24,19 +24,17 @@
   <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2444803618,4114539490&fm=27&gp=0.jpg">
 
   <!-- Order form -->
-  <h2>Place your order</h2>
-  <form action="{% url 'waimai:home_page' %}" method=“POST">
-        {% csrf_token %}
-        <input type="text" name="dish" placeholder="Please Type Which Dish You
-Want"><br>
-        <textarea name="address" placeholder="Please Type Your Address”></
-textarea><br>
-        <input type="submit" value="Place Your Order”>
-    </form>
-    <!-- Show Order -->
-    <h1>Your Order:</h1>
-    <p>Dish Ordered: {{dish}}</p>
-    <p>Delivery Address: {{address}}</p>
+  <h2>Place your Order</h2>
+	<form action="{% url 'waimai:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="dish" placeholder="Please Type Which Dish You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
 
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Dish Ordered: {{dish}}</p>
+	<p>Delivery Address: {{address}}</p>
 </body>
 </html>
